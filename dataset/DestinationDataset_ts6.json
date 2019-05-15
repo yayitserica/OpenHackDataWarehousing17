@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_ts6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ToAzureDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlobFSFile",
+		"typeProperties": {
+			"format": {
+				"type": "JsonFormat",
+				"filePattern": "arrayOfObjects"
+			},
+			"fileName": "cosmos",
+			"folderPath": "southridge/CosmosDB"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

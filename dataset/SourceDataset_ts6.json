@@ -1,0 +1,14 @@
+{
+	"name": "SourceDataset_ts6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDbSourceToDataLake",
+			"type": "LinkedServiceReference"
+		},
+		"type": "DocumentDbCollection",
+		"typeProperties": {
+			"collectionName": "movies"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

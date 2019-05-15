@@ -1,0 +1,16 @@
+{
+	"name": "VanArsdelSqlServer",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=VanArsdelLtd;initial catalog=OnPremRentals",
+			"userName": "openhackadmin",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2YTc4N2E5ZC0wOTQ3LTQxZGQtYjU5Yy1iZmIzZGM4Y2M1NzYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "VanArsdelintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,72 @@
+{
+	"name": "SourceCosmosDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDb1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "DocumentDbCollection",
+		"structure": [
+			{
+				"name": "availabilityDate",
+				"type": "String"
+			},
+			{
+				"name": "genre",
+				"type": "String"
+			},
+			{
+				"name": "rating",
+				"type": "String"
+			},
+			{
+				"name": "releaseYear",
+				"type": "Int64"
+			},
+			{
+				"name": "runtime",
+				"type": "Int64"
+			},
+			{
+				"name": "streamingAvailabilityDate",
+				"type": "String"
+			},
+			{
+				"name": "tier",
+				"type": "Int64"
+			},
+			{
+				"name": "title",
+				"type": "String"
+			},
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "_rid",
+				"type": "String"
+			},
+			{
+				"name": "_self",
+				"type": "String"
+			},
+			{
+				"name": "_etag",
+				"type": "String"
+			},
+			{
+				"name": "_attachments",
+				"type": "String"
+			},
+			{
+				"name": "_ts",
+				"type": "Int64"
+			}
+		],
+		"typeProperties": {
+			"collectionName": "movies"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
