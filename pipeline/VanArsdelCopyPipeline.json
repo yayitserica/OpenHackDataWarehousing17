@@ -62,7 +62,10 @@
 									"referenceName": "DestinationDataset_xbi",
 									"type": "DatasetReference",
 									"parameters": {
-										"cw_fileName": "@item().destination.fileName"
+										"cw_fileName": {
+											"value": "@replace(replace(item().destination.fileName, '[' , ''), ']', '')",
+											"type": "Expression"
+										}
 									}
 								}
 							]
