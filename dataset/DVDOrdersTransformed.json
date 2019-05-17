@@ -9,7 +9,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "SinkedDVDSales2",
 				"folderPath": "joined",
 				"container": "southridge"
 			},
