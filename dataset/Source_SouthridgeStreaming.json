@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_oab",
+	"name": "Source_SouthridgeStreaming",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ConnectionForCloudStreaming",
