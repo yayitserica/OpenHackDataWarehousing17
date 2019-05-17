@@ -12,6 +12,12 @@
 					"name": "StreamingSource",
 					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> StreamingSource"
 				}
+			],
+			"transformations": [
+				{
+					"name": "AddSourceNameColumn",
+					"script": "StreamingSource derive(SourceName = \"Southridge\") ~> AddSourceNameColumn"
+				}
 			]
 		}
 	}
