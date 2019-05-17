@@ -26,7 +26,11 @@
 			"transformations": [
 				{
 					"name": "StreamStartAsDateTime",
-					"script": "TestStreamingData derive(StreamStart = toDate(StreamStart, 'MM/dd/yyyy')) ~> StreamStartAsDateTime"
+					"script": "AddSourceNameColumn derive(StreamStart = toDate(substring(StreamStart, 0, 10))) ~> StreamStartAsDateTime"
+				},
+				{
+					"name": "AddSourceNameColumn",
+					"script": "TestStreamingData derive(SourceName = 'Southridge') ~> AddSourceNameColumn"
 				}
 			]
 		}
