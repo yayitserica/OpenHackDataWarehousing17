@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "OrderDetailsDVD",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ConnectionToDataLake",
