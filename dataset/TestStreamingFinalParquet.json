@@ -1,0 +1,19 @@
+{
+	"name": "TestStreamingFinalParquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ConnectionToDataLake",
+			"type": "LinkedServiceReference"
+		},
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "joined",
+				"container": "southridge"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
