@@ -1,0 +1,18 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SourceDataset_mtd",
+						"type": "DatasetReference"
+					},
+					"name": "DVDSalesTransformation",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table',\n\tdateFormats: ['yyyy-MM-dd'],\n\tpreferredIntegralType: 'long',\n\tpreferredFractionalType: 'float') ~> DVDSalesTransformation"
+				}
+			]
+		}
+	}
+}
