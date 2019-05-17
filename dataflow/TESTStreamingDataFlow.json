@@ -1,6 +1,18 @@
 {
 	"name": "TESTStreamingDataFlow",
 	"properties": {
-		"type": "MappingDataFlow"
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SourceStreaming",
+						"type": "DatasetReference"
+					},
+					"name": "TestStreamingData",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table') ~> TestStreamingData"
+				}
+			]
+		}
 	}
 }
