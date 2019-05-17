@@ -41,12 +41,12 @@
 					"script": "DerivedSourceName derive(UniqueOrderID = concat(OrderDetailID, SourceName),\n\t\tUniqueMovieID = concat(MovieID, SourceName),\n\t\tQuantity = toInteger(Quantity),\n\t\tLineNumber = toInteger(LineNumber),\n\t\tUnitCost = toFloat(UnitCost)) ~> DerivedColumns"
 				},
 				{
-					"name": "DerivedSourceName_Orders",
-					"script": "OrderSalesSource derive(SourceName = 'Southridge') ~> DerivedSourceName_Orders"
+					"name": "DerivedSourceNameOrders",
+					"script": "OrderSalesSource derive(SourceName = 'Southridge') ~> DerivedSourceNameOrders"
 				},
 				{
 					"name": "DerivedColumnsOrders",
-					"script": "DerivedSourceName_Orders derive(UniqueCustomerID = concat(CustomerID, SourceName),\n\t\tOrderDate = toDate(OrderDate),\n\t\tShipDate = toDate(ShipDate),\n\t\tTotalCost = toFloat(TotalCost)) ~> DerivedColumnsOrders"
+					"script": "DerivedSourceNameOrders derive(UniqueCustomerID = concat(CustomerID, SourceName),\n\t\tOrderDate = toString(toDate(OrderDate), 'yyyy-MM-dd'),\n\t\tShipDate = toString(toDate(ShipDate), 'yyyy-MM-dd'),\n\t\tTotalCost = toFloat(TotalCost)) ~> DerivedColumnsOrders"
 				}
 			]
 		}
