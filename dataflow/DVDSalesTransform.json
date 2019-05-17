@@ -10,7 +10,7 @@
 						"type": "DatasetReference"
 					},
 					"name": "OrderDetailsSource",
-					"script": "source(output(\n\t\tProp_0 as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tdateFormats: ['yyyy-MM-dd'],\n\tpreferredIntegralType: 'long',\n\tpreferredFractionalType: 'float') ~> OrderDetailsSource"
+					"script": "source(output(\n\t\tProp_0 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdateFormats: ['yyyy-MM-dd'],\n\tpreferredIntegralType: 'long',\n\tpreferredFractionalType: 'float') ~> OrderDetailsSource"
 				},
 				{
 					"dataset": {
@@ -18,7 +18,7 @@
 						"type": "DatasetReference"
 					},
 					"name": "OrderSalesSource",
-					"script": "source(output(\n\t\tProp_0 as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false) ~> OrderSalesSource"
+					"script": "source(output(\n\t\tProp_0 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> OrderSalesSource"
 				}
 			],
 			"sinks": [
@@ -29,6 +29,12 @@
 					},
 					"name": "DataSink",
 					"script": "OrderDetailsSource sink(input(\n\t\tSourceName as string,\n\t\tCustomerID as string,\n\t\tLastName as string,\n\t\tFirstName as string,\n\t\tAddressLine1 as string,\n\t\tAddressLine2 as string,\n\t\tCity as string,\n\t\tState as string,\n\t\tZipCode as string,\n\t\tPhoneNumber as string,\n\t\tCreatedDate as date,\n\t\tUpdatedDate as date\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> DataSink"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Select1",
+					"script": "OrderSalesSource select(mapColumn(\n\t\tProp_0\n\t))~> Select1"
 				}
 			]
 		}
