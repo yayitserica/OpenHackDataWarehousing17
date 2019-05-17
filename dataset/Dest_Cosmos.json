@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_14e",
+	"name": "Dest_Cosmos",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CosmosDbSourceToDataLake",
