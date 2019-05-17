@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_mtd",
+	"name": "Dest_SalesSQL",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
