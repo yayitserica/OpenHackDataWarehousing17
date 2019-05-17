@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_mtd",
+	"name": "Dest_SouthridgeSales",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
