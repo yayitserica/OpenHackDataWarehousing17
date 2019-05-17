@@ -26,7 +26,7 @@
 			"transformations": [
 				{
 					"name": "StreamStartAsDateTime",
-					"script": "TestStreamingData derive(StreamStart = toDate(StreamStart)) ~> StreamStartAsDateTime"
+					"script": "TestStreamingData derive(StreamStart = toDate(StreamStart, 'MM/dd/yyyy')) ~> StreamStartAsDateTime"
 				}
 			]
 		}
