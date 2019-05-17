@@ -6,11 +6,11 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "SourceStreaming",
+						"referenceName": "Dest_Streaming",
 						"type": "DatasetReference"
 					},
 					"name": "TestStreamingData",
-					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table') ~> TestStreamingData"
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> TestStreamingData"
 				}
 			]
 		}
