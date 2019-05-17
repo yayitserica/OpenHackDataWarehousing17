@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "DVDSalesTransform",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
