@@ -20,7 +20,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "FinalTestStreamingData",
-					"script": "TestStreamingData sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> FinalTestStreamingData"
+					"script": "StreamStartAsDateTime sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> FinalTestStreamingData"
+				}
+			],
+			"transformations": [
+				{
+					"name": "StreamStartAsDateTime",
+					"script": "TestStreamingData derive(StreamStart = toDate(StreamStart)) ~> StreamStartAsDateTime"
 				}
 			]
 		}
