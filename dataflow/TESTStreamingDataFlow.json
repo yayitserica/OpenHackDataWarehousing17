@@ -10,7 +10,7 @@
 						"type": "DatasetReference"
 					},
 					"name": "TestStreamingData",
-					"script": "source(output(\n\t\tProp_0 as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false) ~> TestStreamingData"
+					"script": "source(output(\n\t\tTransactionID as string,\n\t\tCustomerID as string,\n\t\tMovieID as string,\n\t\tStreamStart as string,\n\t\tStreamEnd as string,\n\t\tCreatedDate as string,\n\t\tUpdatedDate as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false) ~> TestStreamingData"
 				}
 			],
 			"sinks": [
