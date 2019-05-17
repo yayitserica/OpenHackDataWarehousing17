@@ -27,8 +27,16 @@
 						"referenceName": "SinkedDVDSales",
 						"type": "DatasetReference"
 					},
-					"name": "DataSink",
-					"script": "DerivedColumns sink(input(\n\t\tSourceName as string,\n\t\tCustomerID as string,\n\t\tLastName as string,\n\t\tFirstName as string,\n\t\tAddressLine1 as string,\n\t\tAddressLine2 as string,\n\t\tCity as string,\n\t\tState as string,\n\t\tZipCode as string,\n\t\tPhoneNumber as string,\n\t\tCreatedDate as date,\n\t\tUpdatedDate as date\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> DataSink"
+					"name": "DVDOrderDetailsTransformSink",
+					"script": "DerivedColumns sink(input(\n\t\tSourceName as string,\n\t\tCustomerID as string,\n\t\tLastName as string,\n\t\tFirstName as string,\n\t\tAddressLine1 as string,\n\t\tAddressLine2 as string,\n\t\tCity as string,\n\t\tState as string,\n\t\tZipCode as string,\n\t\tPhoneNumber as string,\n\t\tCreatedDate as date,\n\t\tUpdatedDate as date\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> DVDOrderDetailsTransformSink"
+				},
+				{
+					"dataset": {
+						"referenceName": "DVDOrdersTransformed",
+						"type": "DatasetReference"
+					},
+					"name": "DVDOrderSalesTransformSink",
+					"script": "DerivedColumnsOrders sink(input(\n\t\tSourceName as string,\n\t\tCustomerID as string,\n\t\tLastName as string,\n\t\tFirstName as string,\n\t\tAddressLine1 as string,\n\t\tAddressLine2 as string,\n\t\tCity as string,\n\t\tState as string,\n\t\tZipCode as string,\n\t\tPhoneNumber as string,\n\t\tCreatedDate as date,\n\t\tUpdatedDate as date\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> DVDOrderSalesTransformSink"
 				}
 			],
 			"transformations": [
