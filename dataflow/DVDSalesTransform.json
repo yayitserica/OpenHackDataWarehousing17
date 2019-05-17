@@ -33,10 +33,6 @@
 			],
 			"transformations": [
 				{
-					"name": "Select1",
-					"script": "OrderSalesSource select(mapColumn(\n\t\tProp_0\n\t))~> Select1"
-				},
-				{
 					"name": "DerivedSourceName",
 					"script": "OrderDetailsSource derive(SourceName = 'Southridge') ~> DerivedSourceName"
 				},
