@@ -29,6 +29,16 @@
 					},
 					"name": "RentalsSink",
 					"script": "RentalFourthCoffeeSource sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> RentalsSink"
+				},
+				{
+					"name": "sink1",
+					"script": "SourceName sink() ~> sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "SourceName",
+					"script": "VanArsdelRentals derive(SourceName = \"VanArsdel\") ~> SourceName"
 				}
 			]
 		}
