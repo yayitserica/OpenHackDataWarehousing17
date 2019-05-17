@@ -9,12 +9,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "[dbo].[OrderDetails].csv",
+				"fileName": "OrderDetails.csv",
 				"folderPath": "salesSQL",
 				"container": "southridge"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
