@@ -26,11 +26,19 @@
 			"transformations": [
 				{
 					"name": "StreamStartAsDateTime",
-					"script": "AddSourceNameColumn derive(StreamStart = toDate(substring(StreamStart, 0, 10))) ~> StreamStartAsDateTime"
+					"script": "AddUniqueOrderID derive(StreamStart = toDate(substring(StreamStart, 0, 10))) ~> StreamStartAsDateTime"
 				},
 				{
 					"name": "AddSourceNameColumn",
 					"script": "TestStreamingData derive(SourceName = 'Southridge') ~> AddSourceNameColumn"
+				},
+				{
+					"name": "AddUniqueMovieID",
+					"script": "AddSourceNameColumn derive(UniqueMovieID = SourceName+MovieID) ~> AddUniqueMovieID"
+				},
+				{
+					"name": "AddUniqueOrderID",
+					"script": "AddUniqueMovieID derive(UniqueOrderID = SourceName+TransactionID) ~> AddUniqueOrderID"
 				}
 			]
 		}
