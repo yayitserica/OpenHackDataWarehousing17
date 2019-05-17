@@ -15,8 +15,8 @@
 			],
 			"transformations": [
 				{
-					"name": "AddSourceNameColumn",
-					"script": "StreamingSource derive(SourceName = \"Southridge\") ~> AddSourceNameColumn"
+					"name": "AddStreamStartAsDateTime",
+					"script": "StreamingSource derive(StreamStartDateTime = toDate(StreamStart)) ~> AddStreamStartAsDateTime"
 				}
 			]
 		}
