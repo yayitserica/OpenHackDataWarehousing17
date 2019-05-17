@@ -9,7 +9,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "Rentals.parquet",
 				"folderPath": "joined",
 				"container": "southridge"
 			},
