@@ -20,13 +20,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "FinalTestStreamingData",
-					"script": "StreamStartAsDateTime sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> FinalTestStreamingData"
+					"script": "StreamEndAsDateTime sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> FinalTestStreamingData"
 				}
 			],
 			"transformations": [
 				{
 					"name": "StreamStartAsDateTime",
-					"script": "AddUniqueCustomerID derive(StreamStart = toDate(StreamStart, 'yyyy-MM-dd')) ~> StreamStartAsDateTime"
+					"script": "AddUniqueCustomerID derive(StreamStart = toString(toDate(StreamStart), 'yyyy-MM-dd')) ~> StreamStartAsDateTime"
 				},
 				{
 					"name": "AddSourceNameColumn",
@@ -43,6 +43,10 @@
 				{
 					"name": "AddUniqueCustomerID",
 					"script": "AddUniqueOrderID derive(UniqueCustomerID = SourceName+CustomerID) ~> AddUniqueCustomerID"
+				},
+				{
+					"name": "StreamEndAsDateTime",
+					"script": "StreamStartAsDateTime derive(StreamEnd = toString(toDate(StreamEnd), 'yyyy-MM-dd')) ~> StreamEndAsDateTime"
 				}
 			]
 		}
