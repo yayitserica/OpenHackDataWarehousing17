@@ -6,11 +6,11 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "SourceDataset_mtd",
+						"referenceName": "DestinationDataset_mtd",
 						"type": "DatasetReference"
 					},
 					"name": "DVDSalesTransformation",
-					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table',\n\tdateFormats: ['yyyy-MM-dd'],\n\tpreferredIntegralType: 'long',\n\tpreferredFractionalType: 'float') ~> DVDSalesTransformation"
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdateFormats: ['yyyy-MM-dd'],\n\tpreferredIntegralType: 'long',\n\tpreferredFractionalType: 'float') ~> DVDSalesTransformation"
 				}
 			]
 		}
