@@ -9,7 +9,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "[dbo].[Transactions].csv",
+				"fileName": "Transactions.csv",
 				"folderPath": "streamingSQL",
 				"container": "southridge"
 			},
