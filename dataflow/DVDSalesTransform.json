@@ -42,7 +42,7 @@
 				},
 				{
 					"name": "DerivedColumns",
-					"script": "DerivedSourceName derive(UniqueOrderID = concat(OrderDetailID, SourceName),\n\t\tUniqueMovieID = concat(MovieID, SourceName)) ~> DerivedColumns"
+					"script": "DerivedSourceName derive(UniqueOrderID = concat(OrderDetailID, SourceName),\n\t\tUniqueMovieID = concat(MovieID, SourceName),\n\t\tQuantity = toInteger(Quantity),\n\t\tLineNumber = toInteger(LineNumber),\n\t\tUnitCost = toFloat(UnitCost)) ~> DerivedColumns"
 				}
 			]
 		}
