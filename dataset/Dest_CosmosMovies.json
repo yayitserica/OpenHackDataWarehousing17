@@ -1,5 +1,5 @@
 {
-	"name": "Dest_Cosmos",
+	"name": "Dest_CosmosMovies",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CosmosDbSourceToDataLake",
