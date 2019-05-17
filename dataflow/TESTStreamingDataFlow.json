@@ -10,7 +10,7 @@
 						"type": "DatasetReference"
 					},
 					"name": "TestStreamingData",
-					"script": "source(output(\n\t\tTransactionID as string,\n\t\tCustomerID as string,\n\t\tMovieID as string,\n\t\tStreamStart as string,\n\t\tStreamEnd as string,\n\t\tCreatedDate as string,\n\t\tUpdatedDate as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false) ~> TestStreamingData"
+					"script": "source(output(\n\t\tTransactionID as string,\n\t\tCustomerID as string,\n\t\tMovieID as string,\n\t\tStreamStart as string,\n\t\tStreamEnd as string,\n\t\tCreatedDate as string,\n\t\tUpdatedDate as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> TestStreamingData"
 				}
 			],
 			"sinks": [
@@ -20,13 +20,7 @@
 						"type": "DatasetReference"
 					},
 					"name": "FinalTestStreamingData",
-					"script": "ChangeStreamStartToDateTime sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> FinalTestStreamingData"
-				}
-			],
-			"transformations": [
-				{
-					"name": "ChangeStreamStartToDateTime",
-					"script": "TestStreamingData derive(StreamStartDateTime = toDate()) ~> ChangeStreamStartToDateTime"
+					"script": "TestStreamingData sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> FinalTestStreamingData"
 				}
 			]
 		}
