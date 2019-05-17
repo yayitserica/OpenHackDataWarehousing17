@@ -6,11 +6,21 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Dest_Streaming",
+						"referenceName": "SourceStreaming",
 						"type": "DatasetReference"
 					},
 					"name": "TestStreamingData",
-					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> TestStreamingData"
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table') ~> TestStreamingData"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SourceStreaming",
+						"type": "DatasetReference"
+					},
+					"name": "FinalTestStreamingData",
+					"script": "TestStreamingData sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table',\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false) ~> FinalTestStreamingData"
 				}
 			]
 		}
