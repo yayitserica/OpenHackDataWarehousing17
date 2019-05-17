@@ -16,6 +16,9 @@
 					"dataflow": {
 						"referenceName": "DVDSalesTransform",
 						"type": "DataFlowReference"
+					},
+					"staging": {
+						"folderPath": ""
 					}
 				}
 			}
