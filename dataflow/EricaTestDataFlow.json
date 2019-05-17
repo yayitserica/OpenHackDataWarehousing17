@@ -6,11 +6,11 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Dest_SouthridgeStreaming",
+						"referenceName": "Source_SouthridgeStreaming",
 						"type": "DatasetReference"
 					},
 					"name": "StreamingSource",
-					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> StreamingSource"
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table') ~> StreamingSource"
 				}
 			],
 			"transformations": [
